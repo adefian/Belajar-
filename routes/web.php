@@ -15,6 +15,12 @@
 //     return view('welcome');
 // });
  
- Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
- Route::resource('/admin', 'AdminController');
+ // Route::resource('/admin', 'AdminController');
+Route::get('admin','AdminController@index');
+		Route::get('admin/create','AdminController@create');
+        Route::post('admin/store','AdminController@store');
+        Route::get('admin/{id}/edit','AdminController@edit');
+        Route::post('admin/update','AdminController@update');
+        Route::get('admin/{id}/delete','AdminController@destroy');
