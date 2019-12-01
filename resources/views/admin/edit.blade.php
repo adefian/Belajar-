@@ -22,6 +22,10 @@
                     </div>
                 </div>
                 <div class="form-group">
+                  <label>Foto</label>
+                  <input name="foto" type="file" class="form-control"  value="{{$data->foto}}">
+                </div>
+                <div class="form-group">
                   <label>Judul</label>
                   <input name="judul" type="text" class="form-control" placeholder="Judul" value="{{$data->judul}}">
                 </div>

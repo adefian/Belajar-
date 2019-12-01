@@ -17,6 +17,10 @@
                 {{csrf_field()}}
                 <!-- text input -->
                 <div class="form-group">
+                  <label>Foto</label>
+                  <input name="foto" type="file" class="form-control">
+                </div>
+                <div class="form-group">
                   <label>Judul</label>
                   <input name="judul" type="text" class="form-control" placeholder="Judul">
                 </div>

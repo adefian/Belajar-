@@ -16,6 +16,7 @@
                 <thead>
                 <tr>
                   <th>No</th>
+                  <th>Foto</th>
                   <th>Judul</th>
                   <th>Sub Judul</th>
                   <th>Isi</th>
@@ -30,12 +31,13 @@
 
                     <tr>
                       <td>{{$no++}}</td>
+                      <td><img style="height: 50px" src="{{$datas->ambilFoto()}}"></td>
                       <td>{{$datas->judul}}</td>
                       <td>{{$datas->subjudul}}</td>
                       <td>{{$datas->isi}}</td>
                       <td class="text-center"> 
-                        <a href="admin/{{$datas->id}}/edit" class="btn btn-warning fa fa-edit"></a>
-                        <a href="admin/{{$datas->id}}/delete" class="btn btn-danger fa fa-trash-o"></a>
+                        <a href="/admin/{{$datas->id}}/edit" class="btn btn-warning fa fa-edit"></a>
+                        <a href="/admin/{{$datas->id}}/delete" class="btn btn-danger fa fa-trash-o"></a>
                       </td>
                     </tr>
 

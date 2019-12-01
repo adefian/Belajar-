@@ -114,20 +114,19 @@
       About Us Section
     ============================-->
 
-    <section id="about">
 
+    <section id="about" class="mt-5">
       @if($data)
         @foreach($data as $datas)
-
-      <div class="container mt-9">
+      <div class="container mb-5">
         <div class="row">
-          <!-- <div class="col-lg-5 col-md-6">
+          <div class="col-lg-5 col-md-6">
             <div class="about-img">
-              <img src="img/about-img.jpg" alt="">
+              <img src="{{$datas->ambilFoto()}}" alt="">
             </div>
-          </div> -->
+          </div>
 
-          <div class="col-lg-10 col-md-10">
+          <div class="col-lg-7 col-md-6">
             <div class="about-content">
               <h2>{{$datas->judul}}</h2>
               <h3>{{$datas->subjudul}}</h3>

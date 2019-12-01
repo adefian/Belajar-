@@ -21,8 +21,13 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-            $input = $request->all();
-            Berita::create($input);
+            $input = Berita::create($request->all());
+
+                if($request->hasFile('foto')){
+                    $request->file('foto')->move('images/',$request->file('foto')->getClientOriginalName());
+                    $input->foto = $request->file('foto')->getClientOriginalName();
+                    $input->save();
+                }
             return redirect('admin');
     }
 
@@ -35,9 +40,13 @@ class AdminController extends Controller
     public function update(Request $request)
     {
             $data = Berita::findOrFail($request->id);
-            $input = $request->all();
+            $data->update($request->all());
             
-            $data->update($input);
+                if($request->hasFile('foto')){
+                    $request->file('foto')->move('images/',$request->file('foto')->getClientOriginalName());
+                    $data->foto = $request->file('foto')->getClientOriginalName();
+                    $data->save();
+                }
             return redirect('admin');
     }
 
